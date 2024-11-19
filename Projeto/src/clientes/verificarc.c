@@ -3,21 +3,22 @@
 #include "../clientes/cadastrarc.h"
 
 // Função para buscar e exibir informações do cliente pelo CPF
-Cliente exibir_cliente(Cliente *clientes, int size, const char *cpf_busca) {
+Cliente exibir_cliente(Cliente *cliente, int size, const char *cpf_busca) {
+    //cliente clientes;
     for (int i = 0; i < size; i++) {
-        if (strcmp(clientes[i].cpf, cpf_busca) == 0) {  // CPF encontrado
+        if (strcmp(cliente[i].cpf, cpf_busca) == 0) {  // CPF encontrado
             printf("\nCliente encontrado:\n");
-            printf("Nome: %s\n", clientes[i].nome);
-            printf("CPF: %s\n", clientes[i].cpf);
-            printf("Data de Nascimento: %s\n", clientes[i].nasc);
-            printf("Gênero: %s\n", clientes[i].gen);
-            printf("Telefone: %s\n", clientes[i].tel);
-            printf("Rua: %s\n", clientes[i].rua);
-            printf("Número da casa: %s\n", clientes[i].num);
+            printf("Nome: %s\n", cliente[i].nome);
+            printf("CPF: %s\n", cliente[i].cpf);
+            printf("Data de Nascimento: %s\n", cliente[i].nasc);
+            printf("Gênero: %s\n", cliente[i].gen);
+            printf("Telefone: %s\n", cliente[i].tel);
+            printf("Rua: %s\n", cliente[i].rua);
+            printf("Número da casa: %s\n", cliente[i].num);
             
             // Liberando memória alocada dinamicamente
             
-            return clientes[i];  // Retorna o cliente encontrado
+            return cliente[i];  // Retorna o cliente encontrado
         }
     }
 

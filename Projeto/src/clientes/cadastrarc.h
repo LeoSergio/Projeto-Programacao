@@ -14,6 +14,6 @@ typedef struct {
 Cliente cad_client(void);
 //void imprimir_client(Cliente Cliente);
 //void liberar_client(Cliente Cliente);
-Cliente exibir_cliente(Cliente *clientes,int size, const char *cpf_busca);
-
+Cliente exibir_cliente(Cliente *cliente,int size, const char *cpf_busca);
+//const é uma variavel que não pode mexer, fica constante...
 #endif

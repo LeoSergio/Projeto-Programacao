@@ -7,7 +7,7 @@ int tela_main();
 void tela_mod_cliente();
 void tela_mod_func();
 int tela_mod_prod();
-void tela_mod_vendas();
+int tela_mod_vendas();
 void tela_info_proj();
 void tela_mod_relat();
 

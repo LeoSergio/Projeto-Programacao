@@ -72,17 +72,15 @@ void tela_mod_cliente(Cliente *clientes, int size){
     } while(op != 0);
 }
 
-void tela_mod_vendas(void) {
+int tela_mod_vendas(void) {
     int op;
     do {
         printf("\n===========================================================\n");
         printf("===                   Módulo de Vendas                =====\n");
         printf("===========================================================\n");
-        printf("===    [1] - Cadastrar Venda                          ===\n");
-        printf("===    [2] - Exibir Venda                             ===\n");
-        printf("===    [3] - Modificar Venda                          ===\n");
-        printf("===    [4] - Excluir Venda                            ===\n");
-        printf("===    [0] - Voltar ao Menu Principal                 ===\n");
+        printf("===    [1] - Fazer Compras                              ===\n");
+        printf("===    [2] - Verificar Compras Realizadas               ===\n");
+        printf("===    [0] - Voltar ao Menu Principal                   ===\n");
         printf("===========================================================\n");
         printf("Escolha uma opção: ");
         scanf("%d", &op);
