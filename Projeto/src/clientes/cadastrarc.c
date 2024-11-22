@@ -23,26 +23,26 @@ Cliente cad_client(void) {
     cliente.nome = malloc(51 * sizeof(char));  // Ajuste conforme o tamanho necessário
     cliente.rua = malloc(51 * sizeof(char));   // Ajuste conforme o tamanho necessário
 
-    printf("Digite o nome do cliente: \0");
-    fgets(" %[^\n]", cliente.nome);
+    printf("Digite o nome do cliente: \n");
+    scanf(" %[^\n]", cliente.nome);
 
-    printf("Digite o CPF do cliente (123.456.789-12): \0");
-    fgets("%s", cliente.cpf);
+    printf("Digite o CPF do cliente (123.456.789-12): \n");
+    scanf("%s", cliente.cpf);
 
-    printf("Data de Nascimento (xx/xx/xxxx): -> \0");
-    fgets("%s", cliente.nasc);
+    printf("Data de Nascimento (xx/xx/xxxx): -> \n");
+    scanf("%s", cliente.nasc);
 
-    printf("Gênero (M/F): -> \0");
-    fgets("%s", cliente.gen);
+    printf("Gênero (M/F): -> \n");
+    scanf("%s", cliente.gen);
 
-    printf("Digite Telefone ((xx) x xxxx-xxxx): -> \0");
-    fgets("%s", cliente.tel);
+    printf("Digite Telefone ((xx) x xxxx-xxxx): -> \n");
+    scanf("%s", cliente.tel);
 
-    printf("Digite o nome da Rua: -> \0");
-    fgets(" %[^\n]", cliente.rua);
+    printf("Digite o nome da Rua: -> \n");
+    scanf(" %[^\n]", cliente.rua);
 
-    printf("Digite o número da casa: -> \0");
-    fgets("%[^\n]", cliente.num);
+    printf("Digite o número da casa: -> \n");
+    scanf("%[^\n]", cliente.num);
 
 
     printf("\nInformações do Cliente:\n");

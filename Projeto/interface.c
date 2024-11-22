@@ -7,7 +7,6 @@
 
 int tela_main(void){    
     int op;
-    //system("clear || cls");
     printf("\n");
     printf("===========================================================\n");
     printf("=====                SIG-Building                     =====\n");
@@ -21,14 +20,17 @@ int tela_main(void){
     printf("=====                [5] - Relatório                  =====\n");
     printf("=====                [6] - Sobre o Projeto            =====\n");
     printf("=====                [0] - Sair                       =====\n");
-    printf("Sua Escolha: --> ");
-    scanf("%d", &op);
     printf("===========================================================\n");
+    printf("Sua Escolha: --> ");
+
+    if (scanf("%d", &op) != 1) {  // Valida se a entrada foi um número
+        while (getchar() != '\n');  // Limpa o buffer de entrada
+        return -1;  // Retorna um valor fora do intervalo esperado para indicar erro
+    }
+
     return op;
-    //erro, falta um defaut...
-    //laço rodando infinito ): 
-  
 }
+
 
 
 
@@ -72,7 +74,7 @@ void tela_mod_cliente(Cliente *clientes, int size){
     } while(op != 0);
 }
 
-int tela_mod_vendas(void) {
+void tela_mod_vendas(void) {
     int op;
     do {
         printf("\n===========================================================\n");
@@ -90,12 +92,6 @@ int tela_mod_vendas(void) {
                 break;
             case 2:
                 exibir_venda();
-                break;
-            case 3:
-                modificar_venda();
-                break;
-            case 4:
-                excluir_venda();
                 break;
             case 0:
                 printf("Voltando ao Menu Principal...\n");

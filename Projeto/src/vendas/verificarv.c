@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "verificarv.h"
+
+
 void exibir_venda(void) {
     int codVenda;
     
