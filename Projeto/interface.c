@@ -86,7 +86,8 @@ void tela_mod_vendas(void) {
         printf("===========================================================\n");
         printf("Escolha uma opção: ");
         scanf("%d", &op);
-        switch(op) {
+        if (op >= 0 && op <= 6){
+            switch(op) {
             case 1:
                 cadastrar_venda();
                 break;
@@ -96,8 +97,10 @@ void tela_mod_vendas(void) {
             case 0:
                 printf("Voltando ao Menu Principal...\n");
                 break;
-            default:
-                printf("Opção inválida! Tente novamente.\n");
+        }
+        
+        }else{
+            printf("Opção inválida! Tente novamente.\n");
         }
     } while(op != 0);
 }
