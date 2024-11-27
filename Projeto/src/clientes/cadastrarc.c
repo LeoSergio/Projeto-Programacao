@@ -17,33 +17,43 @@ Rua:
 //
 Cliente cad_client(void) {
     Cliente cliente;
-    //char resp;
 
     // Alocação dinâmica para campos de tamanho variável
-    cliente.nome = malloc(51 * sizeof(char));  // Ajuste conforme o tamanho necessário
-    cliente.rua = malloc(51 * sizeof(char));   // Ajuste conforme o tamanho necessário
+    cliente.nome = malloc(51 * sizeof(char));  // Nome com até 50 caracteres + 1 para '\0'
+    cliente.rua = malloc(51 * sizeof(char));   // Rua com até 50 caracteres + 1 para '\0'
+
+    if (cliente.nome == NULL || cliente.rua == NULL) {
+        fprintf(stderr, "Erro ao alocar memória.\n");
+        exit(1);  // Sai do programa em caso de erro
+    }
 
     printf("Digite o nome do cliente: \n");
-    scanf(" %[^\n]", cliente.nome);
+    fgets(cliente.nome, 51, stdin);
+    cliente.nome[strcspn(cliente.nome, "\n")] = '\0';  // Remove o '\n' final
 
     printf("Digite o CPF do cliente (123.456.789-12): \n");
-    scanf("%s", cliente.cpf);
+    fgets(cliente.cpf, sizeof(cliente.cpf), stdin);
+    cliente.cpf[strcspn(cliente.cpf, "\n")] = '\0';
 
     printf("Data de Nascimento (xx/xx/xxxx): -> \n");
-    scanf("%s", cliente.nasc);
+    fgets(cliente.nasc, sizeof(cliente.nasc), stdin);
+    cliente.nasc[strcspn(cliente.nasc, "\n")] = '\0';
 
     printf("Gênero (M/F): -> \n");
-    scanf("%s", cliente.gen);
+    fgets(cliente.gen, sizeof(cliente.gen), stdin);
+    cliente.gen[strcspn(cliente.gen, "\n")] = '\0';
 
     printf("Digite Telefone ((xx) x xxxx-xxxx): -> \n");
-    scanf("%s", cliente.tel);
+    fgets(cliente.tel, sizeof(cliente.tel), stdin);
+    cliente.tel[strcspn(cliente.tel, "\n")] = '\0';
 
     printf("Digite o nome da Rua: -> \n");
-    scanf(" %[^\n]", cliente.rua);
+    fgets(cliente.rua, 51, stdin);
+    cliente.rua[strcspn(cliente.rua, "\n")] = '\0';
 
     printf("Digite o número da casa: -> \n");
-    scanf("%[^\n]", cliente.num);
-
+    fgets(cliente.num, sizeof(cliente.num), stdin);
+    cliente.num[strcspn(cliente.num, "\n")] = '\0';
 
     printf("\nInformações do Cliente:\n");
     printf("Nome: %s\n", cliente.nome);
@@ -56,6 +66,7 @@ Cliente cad_client(void) {
 
     return cliente;
 }
+
 /*
 resp = printf("Você desejar salvar suas infromações? ");
     if resp == "S"{

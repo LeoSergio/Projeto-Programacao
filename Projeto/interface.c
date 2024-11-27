@@ -261,6 +261,7 @@ void tela_info_proj(void){
     printf("===========================================================\n");
     printf("=====            Leandro Sergio Da Silva              =====\n");
     printf("=====            Arthur De Medeiros Dantas            =====\n");
+    printf("=====            Julia.....................           =====\n");
     printf("===========================================================\n");
     printf("Pressione <ENTER> para continuar\n");
     getchar();
